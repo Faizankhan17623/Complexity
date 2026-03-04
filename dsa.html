@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px;
+    }
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .cheatsheet {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    h1 {
+        color: #667eea;
+        font-size: 42px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-weight: 800;
+    }
+    
+    h2 {
+        color: #764ba2;
+        font-size: 32px;
+        margin: 30px 0 20px 0;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+    }
+    
+    h3 {
+        color: #667eea;
+        font-size: 24px;
+        margin: 25px 0 15px 0;
+    }
+    
+    .subtitle {
+        text-align: center;
+        color: #666;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    th {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        font-size: 18px;
+    }
+    
+    td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    
+    .best {
+        background-color: #d4edda;
+        font-weight: 600;
+    }
+    
+    .good {
+        background-color: #d1ecf1;
+    }
+    
+    .ok {
+        background-color: #fff3cd;
+    }
+    
+    .bad {
+        background-color: #f8d7da;
+    }
+    
+    .terrible {
+        background-color: #f5c6cb;
+        font-weight: 600;
+    }
+    
+    .notation-badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 5px;
+    }
+    
+    .big-o {
+        background-color: #667eea;
+        color: white;
+    }
+    
+    .big-theta {
+        background-color: #f093fb;
+        color: white;
+    }
+    
+    .big-omega {
+        background-color: #4facfe;
+        color: white;
+    }
+    
+    .code-example {
+        background-color: #f8f9fa;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    
+    .visual-scale {
+        display: flex;
+        margin: 20px 0;
+        gap: 10px;
+    }
+    
+    .scale-item {
+        flex: 1;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-weight: 600;
+    }
+    
+    .emoji {
+        font-size: 32px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    .card {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #667eea;
+    }
+    
+    .highlight {
+        background-color: #fff3cd;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+    }
+</style>
+</style>
+<body>
+    <h2>📝 Quick Reference Rules</h2>
+        
+        <table>
+            <tr>
+                <th style="width: 40%;">Pattern</th>
+                <th style="width: 20%;">Time</th>
+                <th style="width: 20%;">Space</th>
+                <th style="width: 20%;">Example</th>
+            </tr>
+            <tr>
+                <td>Single loop through array</td>
+                <td>O(n)</td>
+                <td>O(1)</td>
+                <td>Sum array</td>
+            </tr>
+            <tr>
+                <td>Nested loops (same size)</td>
+                <td>O(n²)</td>
+                <td>O(1)</td>
+                <td>Find all pairs</td>
+            </tr>
+            <tr>
+                <td>Halving each iteration</td>
+                <td>O(log n)</td>
+                <td>O(1)</td>
+                <td>Binary search</td>
+            </tr>
+            <tr>
+                <td>Create new array of size n</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+                <td>Double all elements</td>
+            </tr>
+            <tr>
+                <td>Recursion (depth n)</td>
+                <td>O(n)</td>
+                <td>O(n)</td>
+                <td>Factorial</td>
+            </tr>
+            <tr>
+                <td>Divide & conquer</td>
+                <td>O(n log n)</td>
+                <td>O(n)</td>
+                <td>Merge sort</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- CHEAT SHEET 2: LANGUAGE-SPECIFIC -->
+    <div class="cheatsheet">
+        <h1>💻 COMPLEXITY IN JS, PYTHON, C</h1>
+        <p class="subtitle">Language-Specific Time Complexity</p>
+        
+        <h2>🟨 JavaScript Operations</h2>
+        
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Code</th>
+                <th>Time</th>
+                <th>Notes</th>
+            </tr>
+            <tr class="best">
+                <td>Array access</td>
+                <td><code>arr[i]</code></td>
+                <td>O(1)</td>
+                <td>Direct index access</td>
+            </tr>
+            <tr class="best">
+                <td>Array push</td>
+                <td><code>arr.push(x)</code></td>
+                <td>O(1)</td>
+                <td>Add to end</td>
+            </tr>
+            <tr class="bad">
+                <td>Array unshift</td>
+                <td><code>arr.unshift(x)</code></td>
+                <td>O(n)</td>
+                <td>Add to start, shifts all</td>
+            </tr>
+            <tr class="best">
+                <td>Array pop</td>
+                <td><code>arr.pop()</code></td>
+                <td>O(1)</td>
+                <td>Remove from end</td>
+            </tr>
+            <tr class="bad">
+                <td>Array shift</td>
+                <td><code>arr.shift()</code></td>
+                <td>O(n)</td>
+                <td>Remove from start, shifts all</td>
+            </tr>
+            <tr class="bad">
+                <td>Array splice</td>
+                <td><code>arr.splice(i, 1)</code></td>
+                <td>O(n)</td>
+                <td>Remove/insert, shifts elements</td>
+            </tr>
+            <tr class="best">
+                <td>Array slice</td>
+                <td><code>arr.slice(start, end)</code></td>
+                <td>O(k)</td>
+                <td>k = size of slice</td>
+            </tr>
+            <tr class="good">
+                <td>Array indexOf</td>
+                <td><code>arr.indexOf(x)</code></td>
+                <td>O(n)</td>
+                <td>Linear search</td>
+            </tr>
+            <tr class="best">
+                <td>Map/Object get</td>
+                <td><code>map.get(key)</code></td>
+                <td>O(1)</td>
+                <td>Hash table lookup</td>
+            </tr>
+            <tr class="best">
+                <td>Map/Object set</td>
+                <td><code>map.set(k, v)</code></td>
+                <td>O(1)</td>
+                <td>Hash table insert</td>
+            </tr>
+            <tr class="best">
+                <td>Set add/has</td>
+                <td><code>set.add(x)</code></td>
+                <td>O(1)</td>
+                <td>Hash set operations</td>
+            </tr>
+            <tr class="ok">
+                <td>Array sort</td>
+                <td><code>arr.sort()</code></td>
+                <td>O(n log n)</td>
+                <td>Uses Timsort typically</td>
+            </tr>
+        </table>
+        
+        <h2>🐍 Python Operations</h2>
+        
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Code</th>
+                <th>Time</th>
+                <th>Notes</th>
+            </tr>
+            <tr class="best">
+                <td>List access</td>
+                <td><code>arr[i]</code></td>
+                <td>O(1)</td>
+                <td>Direct index</td>
+            </tr>
+            <tr class="best">
+                <td>List append</td>
+                <td><code>arr.append(x)</code></td>
+                <td>O(1)</td>
+                <td>Amortized constant</td>
+            </tr>
+            <tr class="bad">
+                <td>List insert</td>
+                <td><code>arr.insert(0, x)</code></td>
+                <td>O(n)</td>
+                <td>Shifts elements</td>
+            </tr>
+            <tr class="best">
+                <td>List pop (end)</td>
+                <td><code>arr.pop()</code></td>
+                <td>O(1)</td>
+                <td>Remove last</td>
+            </tr>
+            <tr class="bad">
+                <td>List pop (start)</td>
+                <td><code>arr.pop(0)</code></td>
+                <td>O(n)</td>
+                <td>Shifts all elements</td>
+            </tr>
+            <tr class="good">
+                <td>List index</td>
+                <td><code>arr.index(x)</code></td>
+                <td>O(n)</td>
+                <td>Linear search</td>
+            </tr>
+            <tr class="best">
+                <td>Dict get/set</td>
+                <td><code>dict[key]</code></td>
+                <td>O(1)</td>
+                <td>Hash table</td>
+            </tr>
+            <tr class="best">
+                <td>Set add/in</td>
+                <td><code>set.add(x)</code></td>
+                <td>O(1)</td>
+                <td>Hash set</td>
+            </tr>
+            <tr class="ok">
+                <td>List sort</td>
+                <td><code>arr.sort()</code></td>
+                <td>O(n log n)</td>
+                <td>Timsort algorithm</td>
+            </tr>
+            <tr class="ok">
+                <td>Sorted</td>
+                <td><code>sorted(arr)</code></td>
+                <td>O(n log n)</td>
+                <td>Returns new sorted list</td>
+            </tr>
+        </table>
+        
+        <h2>⚙️ C Operations</h2>
+        
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>Code</th>
+                <th>Time</th>
+                <th>Notes</th>
+            </tr>
+            <tr class="best">
+                <td>Array access</td>
+                <td><code>arr[i]</code></td>
+                <td>O(1)</td>
+                <td>Pointer arithmetic</td>
+            </tr>
+            <tr class="best">
+                <td>Pointer deref</td>
+                <td><code>*ptr</code></td>
+                <td>O(1)</td>
+                <td>Direct memory access</td>
+            </tr>
+            <tr class="good">
+                <td>String length</td>
+                <td><code>strlen(str)</code></td>
+                <td>O(n)</td>
+                <td>Scans until '\0'</td>
+            </tr>
+            <tr class="good">
+                <td>String copy</td>
+                <td><code>strcpy(dest, src)</code></td>
+                <td>O(n)</td>
+                <td>Copies each char</td>
+            </tr>
+            <tr class="good">
+                <td>String compare</td>
+                <td><code>strcmp(s1, s2)</code></td>
+                <td>O(n)</td>
+                <td>Compares each char</td>
+            </tr>
+            <tr class="best">
+                <td>Memory alloc</td>
+                <td><code>malloc(size)</code></td>
+                <td>O(1)</td>
+                <td>Typically constant</td>
+            </tr>
+            <tr class="ok">
+                <td>qsort</td>
+                <td><code>qsort(arr, n, ...)</code></td>
+                <td>O(n log n)</td>
+                <td>Quicksort average</td>
+            </tr>
+        </table>
+        
+        <h2>🔄 Converting Between Languages</h2>
+        
+        <table>
+            <tr>
+                <th>Operation</th>
+                <th>JavaScript</th>
+                <th>Python</th>
+                <th>C</th>
+                <th>Complexity</th>
+            </tr>
+            <tr>
+                <td>Create array</td>
+                <td><code>const arr = [1,2,3]</code></td>
+                <td><code>arr = [1,2,3]</code></td>
+                <td><code>int arr[] = {1,2,3}</code></td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Get length</td>
+                <td><code>arr.length</code></td>
+                <td><code>len(arr)</code></td>
+                <td><code>sizeof(arr)/sizeof(arr[0])</code></td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Loop array</td>
+                <td><code>for (let x of arr)</code></td>
+                <td><code>for x in arr:</code></td>
+                <td><code>for (i=0; i&lt;n; i++)</code></td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Find max</td>
+                <td><code>Math.max(...arr)</code></td>
+                <td><code>max(arr)</code></td>
+                <td>Manual loop</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Sort array</td>
+                <td><code>arr.sort((a,b)=>a-b)</code></td>
+                <td><code>arr.sort()</code></td>
+                <td><code>qsort(...)</code></td>
+                <td>O(n log n)</td>
+            </tr>
+            <tr>
+                <td>Reverse</td>
+                <td><code>arr.reverse()</code></td>
+                <td><code>arr.reverse()</code></td>
+                <td>Manual swap</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- CHEAT SHEET 3: COMMON ALGORITHMS -->
+    <div class="cheatsheet">
+        <h1>🚀 ALGORITHM COMPLEXITY REFERENCE</h1>
+        <p class="subtitle">Common Algorithms & Their Complexities</p>
+        
+        <h2>🔍 Searching Algorithms</h2>
+        
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Best Case</th>
+                <th>Average Case</th>
+                <th>Worst Case</th>
+                <th>Space</th>
+                <th>Notes</th>
+            </tr>
+            <tr>
+                <td><strong>Linear Search</strong></td>
+                <td class="best">Ω(1)</td>
+                <td class="good">Θ(n)</td>
+                <td class="good">O(n)</td>
+                <td>O(1)</td>
+                <td>Found first try / Check all</td>
+            </tr>
+            <tr>
+                <td><strong>Binary Search</strong></td>
+                <td class="best">Ω(1)</td>
+                <td class="best">Θ(log n)</td>
+                <td class="best">O(log n)</td>
+                <td>O(1)</td>
+                <td>Requires sorted array</td>
+            </tr>
+        </table>
+        
+        <h2>📊 Sorting Algorithms</h2>
+        
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Best</th>
+                <th>Average</th>
+                <th>Worst</th>
+                <th>Space</th>
+                <th>Stable?</th>
+            </tr>
+            <tr>
+                <td><strong>Bubble Sort</strong></td>
+                <td class="good">Ω(n)</td>
+                <td class="bad">Θ(n²)</td>
+                <td class="bad">O(n²)</td>
+                <td>O(1)</td>
+                <td>✅ Yes</td>
+            </tr>
+            <tr>
+                <td><strong>Selection Sort</strong></td>
+                <td class="bad">Ω(n²)</td>
+                <td class="bad">Θ(n²)</td>
+                <td class="bad">O(n²)</td>
+                <td>O(1)</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Insertion Sort</strong></td>
+                <td class="good">Ω(n)</td>
+                <td class="bad">Θ(n²)</td>
+                <td class="bad">O(n²)</td>
+                <td>O(1)</td>
+                <td>✅ Yes</td>
+            </tr>
+            <tr>
+                <td><strong>Merge Sort</strong></td>
+                <td class="ok">Ω(n log n)</td>
+                <td class="ok">Θ(n log n)</td>
+                <td class="ok">O(n log n)</td>
+                <td>O(n)</td>
+                <td>✅ Yes</td>
+            </tr>
+            <tr>
+                <td><strong>Quick Sort</strong></td>
+                <td class="ok">Ω(n log n)</td>
+                <td class="ok">Θ(n log n)</td>
+                <td class="bad">O(n²)</td>
+                <td>O(log n)</td>
+                <td>❌ No</td>
+            </tr>
+            <tr>
+                <td><strong>Heap Sort</strong></td>
+                <td class="ok">Ω(n log n)</td>
+                <td class="ok">Θ(n log n)</td>
+                <td class="ok">O(n log n)</td>
+                <td>O(1)</td>
+                <td>❌ No</td>
+            </tr>
+        </table>
+        
+        <h2>🌳 Data Structure Operations</h2>
+        
+        <table>
+            <tr>
+                <th>Data Structure</th>
+                <th>Access</th>
+                <th>Search</th>
+                <th>Insert</th>
+                <th>Delete</th>
+                <th>Space</th>
+            </tr>
+            <tr>
+                <td><strong>Array</strong></td>
+                <td class="best">O(1)</td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Stack</strong></td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td class="best">O(1)</td>
+                <td class="best">O(1)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Queue</strong></td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td class="best">O(1)</td>
+                <td class="best">O(1)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Linked List</strong></td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td class="best">O(1)</td>
+                <td class="best">O(1)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Hash Table</strong></td>
+                <td>N/A</td>
+                <td class="best">O(1)</td>
+                <td class="best">O(1)</td>
+                <td class="best">O(1)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Binary Search Tree</strong></td>
+                <td class="best">O(log n)</td>
+                <td class="best">O(log n)</td>
+                <td class="best">O(log n)</td>
+                <td class="best">O(log n)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td><strong>Heap</strong></td>
+                <td class="good">O(n)</td>
+                <td class="good">O(n)</td>
+                <td class="best">O(log n)</td>
+                <td class="best">O(log n)</td>
+                <td>O(n)</td>
+            </tr>
+        </table>
+        
+        <h2>💡 Quick Decision Guide</h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>✅ Use O(1) - Constant</h3>
+                <ul>
+                    <li>Array index access</li>
+                    <li>Hash map lookup</li>
+                    <li>Stack push/pop</li>
+                    <li>Simple calculations</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>✅ Use O(log n) - Logarithmic</h3>
+                <ul>
+                    <li>Binary search in sorted array</li>
+                    <li>Balanced tree operations</li>
+                    <li>Divide and conquer</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>✅ Use O(n) - Linear</h3>
+                <ul>
+                    <li>Single loop through data</li>
+                    <li>Linear search</li>
+                    <li>Array traversal</li>
+                    <li>Most array operations</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>✅ Use O(n log n) - Linearithmic</h3>
+                <ul>
+                    <li>Efficient sorting (Merge, Quick)</li>
+                    <li>Divide and conquer with merge</li>
+                    <li>Best we can do for sorting</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>❌ Avoid O(n²) - Quadratic</h3>
+                <ul>
+                    <li>Nested loops</li>
+                    <li>Bubble/Selection sort</li>
+                    <li>Comparing all pairs</li>
+                    <li>Only for small data (&lt;100 items)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>💀 Never Use O(2ⁿ) - Exponential</h3>
+                <ul>
+                    <li>Naive recursive Fibonacci</li>
+                    <li>Brute force solutions</li>
+                    <li>Trying all subsets</li>
+                    <li>Computer will freeze!</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>🎓 Interview Tips</h2>
+        
+        <div style="background: #fff3cd; border-left: 5px solid #ffc107; padding: 20px; border-radius: 10px; margin: 20px 0;">
+            <h3 style="margin-top: 0; color: #856404;">When Interviewer Asks "What's the time complexity?"</h3>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+                <li><strong>They mean:</strong> Big-O (worst case)</li>
+                <li><strong>Say:</strong> "O(n)" not "Θ(n)" or "Ω(n)"</li>
+                <li><strong>Explain:</strong> "In the worst case, we check all n elements, so O(n)"</li>
+                <li><strong>Bonus:</strong> Mention space complexity too: "O(n) time, O(1) space"</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;">
+            <h2 style="color: white; margin-bottom: 15px;">🎯 Remember</h2>
+            <p style="font-size: 18px; margin: 10px 0;"><strong>Consistency > Intensity</strong></p>
+            <p style="font-size: 18px; margin: 10px 0;"><strong>Understand > Memorize</strong></p>
+            <p style="font-size: 18px; margin: 10px 0;"><strong>Practice > Theory</strong></p>
+            <p style="font-size: 24px; margin-top: 20px;">You got this! 🔥💪</p>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
